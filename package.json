@@ -1,0 +1,31 @@
+{
+  "name": "Grechka",
+  "version": "1.0.0",
+  "description": "Site for Grechka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "author": "Max Shevkoplias",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass-snippets": "^1.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-cssbeautify": "^1.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "natives": "^1.1.6"
+  }
+}
