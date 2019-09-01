@@ -12,10 +12,10 @@
 	
 	<meta property="og:image" content="path/to/image.jpg">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/png">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="img/favicon/favicon.jpg" type="image/jpg">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.jpg">
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -27,11 +27,15 @@
 
 <body>
 	<header class="header">
-		<div class="header__logo">
-			<img src="img/grechka-logo.svg" alt="">
+		<div class="header__wrap">
+			<div class="header__link">
+				<a href="#" class="header__logo">
+					<img src="img/grechka-logo.svg" alt="">
+				</a>
+				<a href="#" class="header__phone">+7 (978) 884 67 66</a>
+				<a href="#" class="header__email">hello@grechka.digital</a>
+			</div>
 		</div>
-		<a href="#" class="header__phone">+7 (978) 884 67 66</a>
-		<a href="#" class="header__email">hello@grechka.digital</a>
 	</header>
 
 	<main class="main">
@@ -39,61 +43,73 @@
 		<section class="main__block main-block">
 			<div class="main-block__title">
 				<div class="main-block__wrap">
-					<h1>Разрабатываем</h1>
+					<h1 class="main-block__title-part main-block__title-part_first">Разрабатываем</h1>
 				</div>
 				<div class="main-block__wrap">
-					<h1>цифровые продукты</h1>
+					<h1 class="main-block__title-part main-block__title-part_second">цифровые продукты</h1>
 				</div>
 				<div class="main-block__wrap">
-					<h1>для бизнеса</h1>
+					<h1 class="main-block__title-part main-block__title-part_third">для бизнеса</h1>
 				</div>
 			</div>
 			<div class="main-block__subtitle">
 				<div class="main-block__wrap main-block__wrap_subtitle">
-					<h2>Cоздаем сайты, программируем сложный функционал,</h2>
-				</div>
-				<div class="main-block__wrap_subtitle">
-					<h2>продумываем дизайн, проектируем интерфейсы.</h2>
+					<h2 class="main-block__subtitle-part">Cоздаем сайты, программируем сложный функционал, продумываем дизайн, проектируем интерфейсы.
+					</h2>
 				</div>
 			</div>
-			<a href="#" class="main-block__link">
-				<span class="main-block__shadow"></span>
-				<div class="main-block__download">
-					<img src="img/download.svg" alt="">
-					<span>Скачать презентацию (PDF)</span>
+			<div class="main-block__container-wrap">
+				<div class="main-block__container">
+					<a href="#" class="main-block__link">
+						<span class="main-block__shadow"></span>
+						<div class="main-block__download">
+							<img src="img/download.svg" alt="">
+							<span>Скачать презентацию (PDF)</span>
+						</div>
+					</a>
 				</div>
-			</a>
+			</div>
 		</section>
 
-		<a href="#" class="main__be">
-			<img src="img/target-blank.svg" alt="">
-			<img src="img/behance-logo.svg" alt="">
+		<div class="aside">
+			<div class="aside__phone aside__phone_krymland">
+				<div class="aside__wrap">
+					<img src="img/phone/smartphone.png" alt="">
+					<img src="img/phone/krymland.jpg" alt="">
+				</div>
+			</div>
+			<div class="aside__phone aside__phone_sakropol">
+				<div class="aside__wrap">
+					<img src="img/phone/smartphone.png" alt="">
+					<img src="img/phone/sakropol.jpg" alt="">
+				</div>
+			</div>
+			<div class="aside__phone aside__phone_akkond">
+				<div class="aside__wrap">
+					<img src="img/phone/smartphone.png" alt="">
+					<img src="img/phone/akkond.jpg" alt="">
+				</div>
+			</div>
+			<div class="aside__phone aside__phone_smu">
+				<div class="aside__wrap">
+					<img src="img/phone/smartphone.png" alt="">
+					<img src="img/phone/smu.jpg" alt="">
+				</div>
+			</div>
+			<div class="aside__phone aside__phone_monolit">
+				<div class="aside__wrap">
+					<img src="img/phone/smartphone.png" alt="">
+					<img src="img/phone/monolit.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<a href="https://www.behance.net/grechka-digital" target="_blank" class="main__behance-logo behance-logo">
+			<img src="img/target-blank.svg" alt="" class="img-svg">
+			<img src="img/behance-logo.svg" alt="" class="img-svg">
 		</a>
 
 	</main>
-
-	<aside class="aside">
-		<div class="aside__phone aside__phone_krymland">
-			<img src="img/phone/smartphone.png" alt="">
-			<img src="img/phone/akkond.png" alt="">
-		</div>
-		<!-- <div class="aside__phone aside__phone_sakropol">
-			<img src="img/phone/smartphone.png" alt="">
-			<img src="img/phone/sakropol.png" alt="">
-		</div>
-		<div class="aside__phone aside__phone_akkond">
-			<img src="img/phone/smartphone.png" alt="">
-			<img src="img/phone/akkond.png" alt="">
-		</div>
-		<div class="aside__phone aside__phone_smu">
-			<img src="img/phone/smartphone.png" alt="">
-			<img src="img/phone/smu.png" alt="">
-		</div>
-		<div class="aside__phone aside__phone_monolit">
-			<img src="img/phone/smartphone.png" alt="">
-			<img src="img/phone/monolit.png" alt="">
-		</div> -->
-	</aside>
 
 	<footer>
 	</footer>
