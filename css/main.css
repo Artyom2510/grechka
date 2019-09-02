@@ -55,11 +55,25 @@ h1 {
 	color: #47525b;
 }
 
+@media (max-width: 1499.98px) {
+	h1 {
+		font-size: 42px;
+		line-height: 48px;
+	}
+}
+
 h2 {
 	font-size: 20px;
 	line-height: 36px;
 	font-weight: 400;
 	color: #65717a;
+}
+
+@media (max-width: 1499.98px) {
+	h2 {
+		font-size: 15px;
+		line-height: 30px;
+	}
 }
 
 a {
@@ -78,14 +92,29 @@ a:hover, a:focus, a:active {
 
 .header {
 	display: block;
-	width: 1010px;
+	max-width: 1010px;
 	height: 160px;
 	padding: 40px 68px 68px 13.13vw;
 	background-color: #fff;
+	opacity: 0;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: opacity .35s ease-out, -webkit-transform .5s ease-out;
+	transition: opacity .35s ease-out, -webkit-transform .5s ease-out;
+	-o-transition: transform .5s ease-out, opacity .35s ease-out;
+	transition: transform .5s ease-out, opacity .35s ease-out;
+	transition: transform .5s ease-out, opacity .35s ease-out, -webkit-transform .5s ease-out;
 }
 
-.header__wrap {
-	overflow: hidden;
+.header.translate {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.header.visible {
+	opacity: 1;
 }
 
 .header__link {
@@ -97,25 +126,6 @@ a:hover, a:focus, a:active {
 	-webkit-align-items: flex-end;
 	-ms-flex-align: end;
 	align-items: flex-end;
-	opacity: 1;
-	-webkit-transform: translateY(-100%);
-	-ms-transform: translateY(-100%);
-	transform: translateY(-100%);
-	-webkit-transition: opacity .35s ease-out, -webkit-transform .5s ease-out;
-	transition: opacity .35s ease-out, -webkit-transform .5s ease-out;
-	-o-transition: transform .5s ease-out, opacity .35s ease-out;
-	transition: transform .5s ease-out, opacity .35s ease-out;
-	transition: transform .5s ease-out, opacity .35s ease-out, -webkit-transform .5s ease-out;
-}
-
-.header__link.translate {
-	-webkit-transform: translateY(0);
-	-ms-transform: translateY(0);
-	transform: translateY(0);
-}
-
-.header__link.visible {
-	opacity: 1;
 }
 
 .header__link a:hover, .header__link a:active, .header__link a:focus {
@@ -127,6 +137,16 @@ a:hover, a:focus, a:active {
 	width: 178px;
 	height: 52px;
 	margin-right: 102px;
+}
+
+.header__logo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
 }
 
 .header__phone, .header__email {
@@ -141,22 +161,52 @@ a:hover, a:focus, a:active {
 	margin-right: 68px;
 }
 
+@media (max-width: 1499.98px) {
+	.header {
+		max-width: 674px;
+		height: 120px;
+		padding: 30px 32px 50px 6.25vw;
+	}
+
+	.header__logo {
+		width: 133px;
+		height: 39px;
+		margin-right: 84px;
+	}
+
+	.header__phone, .header__email {
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	.header__phone {
+		margin-right: 32px;
+	}
+}
+
 .main {
-	display: block;
-	padding-top: 17.59vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: -webkit-calc(100vh - 304px);
+	height: calc(100vh - 304px);
 	padding-left: 13.13vw;
 }
 
 .main__block {
+	position: relative;
 	display: block;
+	z-index: 5;
 }
 
 .main__behance-logo {
 	position: absolute;
 	bottom: 0;
-	display: block;
-	width: 160px;
-	height: 160px;
 	-webkit-transform: translateY(100%);
 	-ms-transform: translateY(100%);
 	transform: translateY(100%);
@@ -178,6 +228,14 @@ a:hover, a:focus, a:active {
 	opacity: 1;
 }
 
+@media (max-width: 1499.98px) {
+	.main {
+		height: -webkit-calc(100vh - 224px);
+		height: calc(100vh - 224px);
+		padding-left: 6.25vw;
+	}
+}
+
 .main-block__title {
 	display: block;
 	margin-bottom: 24px;
@@ -185,7 +243,7 @@ a:hover, a:focus, a:active {
 
 .main-block__subtitle {
 	display: block;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .main-block__wrap {
@@ -244,11 +302,18 @@ a:hover, a:focus, a:active {
 }
 
 .main-block__container-wrap {
-	display: block;
-	width: 100%;
-	margin-left: -10px;
-	padding-left: 10px;
-	height: 56px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 360px;
+	margin-left: -20px;
+	padding-left: 20px;
+	height: 96px;
 	overflow: hidden;
 }
 
@@ -297,8 +362,11 @@ a:hover, a:focus, a:active {
 .main-block__shadow {
 	position: absolute;
 	z-index: 0;
-	top: 0;
+	top: 50%;
 	left: 8px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 	display: block;
 	width: 296px;
 	height: 56px;
@@ -352,6 +420,21 @@ a:hover, a:focus, a:active {
 	color: #fff;
 }
 
+@media (max-width: 1499.98px) {
+	.main-block__wrap {
+		height: 48px;
+		max-width: 450px;
+	}
+
+	.main-block__wrap_subtitle {
+		height: 60px;
+	}
+
+	.main-block__subtitle {
+		margin-bottom: 0;
+	}
+}
+
 .behance-logo {
 	position: absolute;
 	display: -webkit-box;
@@ -396,6 +479,18 @@ a:hover, a:focus, a:active {
 	fill: #0057ff;
 }
 
+@media (max-width: 1499.98px) {
+	.behance-logo {
+		width: 120px;
+		height: 120px;
+	}
+
+	.behance-logo svg:first-child {
+		top: 10px;
+		right: 10px;
+	}
+}
+
 .aside {
 	position: absolute;
 	right: 0;
@@ -403,25 +498,44 @@ a:hover, a:focus, a:active {
 	display: block;
 	width: 31.67vw;
 	height: 100%;
+}
+
+.aside__container {
+	position: relative;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	height: auto;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
-.aside::before {
+.aside__container::before {
 	content: '';
+	float: left;
+	padding-bottom: 166.25%;
+}
+
+.aside__container::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.aside__circle {
 	position: absolute;
 	z-index: 1;
-	top: 21.1%;
-	left: -16%;
+	top: 19.1%;
+	left: -20%;
 	display: block;
-	width: 970px;
-	height: 970px;
+	width: 165%;
+	height: 99.25%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	border: 300px solid #16d550;
+	background-color: #16d550;
 	opacity: 0;
 	-webkit-transform: translateX(25%);
 	-ms-transform: translateX(25%);
@@ -431,6 +545,34 @@ a:hover, a:focus, a:active {
 	-o-transition: transform 1.1s linear, opacity .5s linear;
 	transition: transform 1.1s linear, opacity .5s linear;
 	transition: transform 1.1s linear, opacity .5s linear, -webkit-transform 1.1s linear;
+}
+
+.aside__circle::before {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 37%;
+	height: 37%;
+	background-image: -webkit-linear-gradient(313deg, #f5f9fa, #e2f7fb);
+	background-image: -o-linear-gradient(313deg, #f5f9fa, #e2f7fb);
+	background-image: linear-gradient(137deg, #f5f9fa, #e2f7fb);
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.aside__circle.translate {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.aside__circle.visible {
+	opacity: 1;
 }
 
 .aside.translate::before {
@@ -447,10 +589,7 @@ a:hover, a:focus, a:active {
 	position: absolute;
 	z-index: 2;
 	display: block;
-	max-width: 398px;
 	width: 65.46%;
-	max-height: 732px;
-	height: 79.57%;
 	opacity: 0;
 	-webkit-transition: opacity .5s linear, -webkit-transform 1.1s linear;
 	transition: opacity .5s linear, -webkit-transform 1.1s linear;
@@ -470,73 +609,55 @@ a:hover, a:focus, a:active {
 }
 
 .aside__phone_krymland {
-	left: 0;
-	top: -19.15vh;
+	left: -4.4%;
+	top: -16.7%;
 	-webkit-transform: translateY(-100%);
 	-ms-transform: translateY(-100%);
 	transform: translateY(-100%);
 }
 
 .aside__phone_sakropol {
-	left: 0;
-	top: 57.02vh;
+	left: -4.4%;
+	top: 54.02%;
 	-webkit-transform: translateY(-100%);
 	-ms-transform: translateY(-100%);
 	transform: translateY(-100%);
 }
 
 .aside__phone_akkond {
-	top: 14.26vh;
-	left: 59.87%;
+	left: 55.87%;
+	top: 14.26%;
 	-webkit-transform: translateY(100%);
 	-ms-transform: translateY(100%);
 	transform: translateY(100%);
 }
 
 .aside__phone_smu {
-	left: 59.87%;
-	top: 90.21vh;
+	left: 55.87%;
+	top: 85.02%;
 	-webkit-transform: translateY(100%);
 	-ms-transform: translateY(100%);
 	transform: translateY(100%);
 }
 
 .aside__phone_monolit {
-	left: 120.07%;
-	top: 56.81vh;
+	left: 116.07%;
+	top: 53.93%;
 	-webkit-transform: translateX(100%);
 	-ms-transform: translateX(100%);
 	transform: translateX(100%);
-	opacity: 0;
-	-webkit-transition: opacity .5s linear, -webkit-transform 1.1s linear;
-	transition: opacity .5s linear, -webkit-transform 1.1s linear;
-	-o-transition: transform 1.1s linear, opacity .5s linear;
-	transition: transform 1.1s linear, opacity .5s linear;
-	transition: transform 1.1s linear, opacity .5s linear, -webkit-transform 1.1s linear;
-}
-
-.aside__phone_monolit.translate {
-	-webkit-transform: translateY(0);
-	-ms-transform: translateY(0);
-	transform: translateY(0);
-}
-
-.aside__phone_monolit.visible {
-	opacity: 1;
 }
 
 .aside__wrap {
 	position: relative;
 	width: 100%;
-	max-width: 398px;
-	height: 100%;
-	max-height: 732px;
+	height: auto;
 }
 
 .aside__wrap::before {
 	content: '';
 	float: left;
-	padding-bottom: 56.25%;
+	padding-bottom: 183.9196%;
 }
 
 .aside__wrap::after {
@@ -559,10 +680,84 @@ a:hover, a:focus, a:active {
 	position: absolute;
 	z-index: 1;
 	top: 2.17%;
-	left: 36px;
+	left: 8.29%;
 	display: block;
 	width: 75.38%;
 	height: 88.66%;
 	-webkit-border-radius: 30px;
 	border-radius: 30px;
+}
+
+@media (max-width: 1499.98px) {
+	.aside {
+		top: -14.06%;
+		width: 34.67vw;
+	}
+
+	.aside__phone {
+		width: 68%;
+	}
+
+	.aside__phone_krymland {
+		top: -16.05%;
+		left: -5.9%;
+	}
+
+	.aside__phone_sakropol {
+		top: 56.4%;
+		left: -5.9%;
+	}
+
+	.aside__phone_akkond {
+		top: 15.66%;
+		left: 55.87%;
+	}
+
+	.aside__phone_smu {
+		top: 88.25%;
+		left: 55.87%;
+	}
+
+	.aside__phone_monolit {
+		top: 56.25%;
+		left: 118%;
+	}
+}
+
+@media (max-width: 1279.98px) {
+	.aside {
+		top: -12.06%;
+		right: -20.29%;
+		width: 40.67vw;
+	}
+
+	.aside__phone {
+		width: 72%;
+	}
+
+	.aside__phone_krymland {
+		top: -22.05%;
+		left: -3.9%;
+	}
+
+	.aside__phone_sakropol {
+		left: -3.9%;
+		top: 55.4%;
+	}
+
+	.aside__phone_akkond {
+		left: 61.87%;
+		top: 11.66%;
+	}
+
+	.aside__phone_smu {
+		left: 61.87%;
+		top: 89.25%;
+	}
+
+	.aside__phone_monolit {
+		display: none;
+		top: 56.25%;
+		left: 118%;
+	}
 }

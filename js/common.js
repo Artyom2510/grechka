@@ -55,34 +55,34 @@ $(function() {
 	//Поворт - скачать презентацию
 	// $('.main-block__container').on({
 	// 	mousemove: e => {
-	// 		var $link = $('.main-block__link');
+	// 		var $container = $('.main-block__link');
 	// 		var $x = e.offsetX;
 	// 		var	$y = e.offsetY;
-	// 		var $middleW = $link.outerWidth(true) / 2;
-	// 		var $middleH = $link.outerHeight(true) / 2;
+	// 		var $middleW = $container.outerWidth(true) / 2;
+	// 		var $middleH = $container.outerHeight(true) / 2;
 	// 		var $rotateX = -($x - $middleW) / 10;
 	// 		var $rotateY = -($y - $middleH) / 10;
-	// 		$link.css('transform', 'rotateX(' + $rotateX +'deg) rotateY(' + $rotateY +'deg)');
+	// 		$container.css('transform', 'rotateX(' + $rotateX +'deg) rotateY(' + $rotateY +'deg)');
 	// 	},
 	// 	mouseleave: () => {
-	// 		var $link = $('.main-block__link');
-	// 		$link.css('transform', 'rotate(0deg)');
+	// 		var $container = $('.main-block__link');
+	// 		$container.css('transform', 'rotate(0deg)');
 	// 	}
 	// });
-	$('.main-block__container').on({
+	$('.main-block__container-wrap').on({
 		mousemove: e => {
-			var $link = $('.main-block__link');
+			var $container = $('.main-block__container');
 			var $x = e.offsetX;
 			var	$y = e.offsetY;
-			var $middleW = $link.outerWidth(true) / 2;
-			var $middleH = $link.outerHeight(true) / 2;
-			var $rotateX = -($x - $middleW) / 500000;
-			var $rotateY = -($y - $middleH) / 500000;
-			$link.css('transform', 'matrix3d(1, 0, 0, ' + $rotateX + ', 0, 1, 0, ' + $rotateY + ', 0, 0, 1, 0, 0, 0, 0, 1)');
+			var $middleW = $container.outerWidth(true) / 2;
+			var $middleH = $container.outerHeight(true) / 2;
+			var $rotateX = -($x - $middleW) / 300000;
+			var $rotateY = -($y - $middleH) / 300000;
+			$container.css('transform', 'matrix3d(1, 0, 0, ' + $rotateX + ', 0, 1, 0, ' + $rotateY + ', 0, 0, 1, 0, 0, 0, 0, 1)');
 		},
 		mouseleave: () => {
-			var $link = $('.main-block__link');
-			$link.css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)');
+			var $container = $('.main-block__container');
+			$container.css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)');
 		}
 	});
 
@@ -90,8 +90,8 @@ $(function() {
 	$(document).ready(function() {
 		var arrOfTranslate = [
 			'.aside__phone',
-			'.header__link',
-			'.aside',
+			'.header',
+			'.aside__circle',
 			'.main__behance-logo',
 			'.main-block__title-part_first',
 			'.main-block__title-part_second',
