@@ -48,40 +48,24 @@ $(function() {
 
 	imgSvg();
 
-	$('.main').on("DOMNodeInserted", function (e) {
+	$('.main').on("DOMNodeInserted", function() {
 		imgSvg();
 	});
 
-	//Поворт - скачать презентацию
-	// $('.main-block__container').on({
-	// 	mousemove: e => {
-	// 		var $container = $('.main-block__link');
-	// 		var $x = e.offsetX;
-	// 		var	$y = e.offsetY;
-	// 		var $middleW = $container.outerWidth(true) / 2;
-	// 		var $middleH = $container.outerHeight(true) / 2;
-	// 		var $rotateX = -($x - $middleW) / 10;
-	// 		var $rotateY = -($y - $middleH) / 10;
-	// 		$container.css('transform', 'rotateX(' + $rotateX +'deg) rotateY(' + $rotateY +'deg)');
-	// 	},
-	// 	mouseleave: () => {
-	// 		var $container = $('.main-block__link');
-	// 		$container.css('transform', 'rotate(0deg)');
-	// 	}
-	// });
-	$('.main-block__container-wrap').on({
-		mousemove: e => {
-			var $container = $('.main-block__container');
+	//Поворт обмылков
+	$('.aside__phone').on({
+		mousemove: function(e) {
+			var $container = $(this).children('.aside__wrap');
 			var $x = e.offsetX;
 			var	$y = e.offsetY;
 			var $middleW = $container.outerWidth(true) / 2;
 			var $middleH = $container.outerHeight(true) / 2;
-			var $rotateX = -($x - $middleW) / 300000;
-			var $rotateY = -($y - $middleH) / 300000;
+			var $rotateX = -($x - $middleW) / 2000000;
+			var $rotateY = -($y - $middleH) / 8000000;
 			$container.css('transform', 'matrix3d(1, 0, 0, ' + $rotateX + ', 0, 1, 0, ' + $rotateY + ', 0, 0, 1, 0, 0, 0, 0, 1)');
 		},
-		mouseleave: () => {
-			var $container = $('.main-block__container');
+		mouseleave: function() {
+			var $container = $(this).children('.aside__wrap');
 			$container.css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)');
 		}
 	});
@@ -91,16 +75,17 @@ $(function() {
 		var arrOfTranslate = [
 			'.aside__phone',
 			'.header',
+			'.footer',
 			'.aside__circle',
 			'.main__behance-logo',
 			'.main-block__title-part_first',
 			'.main-block__title-part_second',
 			'.main-block__title-part_third',
 			'.main-block__subtitle-part',
-			'.main-block__container',
+			'.main-block__link',
 		];
-		var arrayOfTimeTranslate = [0, 250, 250, 250, 600, 800, 900, 1100, 1200];
-		var arrayOfTimeVisible = [250, 450, 450, 450, 750, 900, 1100, 1200, 1300];
+		var arrayOfTimeTranslate = [0, 250, 250, 250, 250, 600, 800, 900, 1100, 1200];
+		var arrayOfTimeVisible = [250, 450, 450, 450, 450, 750, 900, 1100, 1200, 1300];
 		for(var i = 0; i < arrOfTranslate.length; i++) {
 			timer(i);
 		}

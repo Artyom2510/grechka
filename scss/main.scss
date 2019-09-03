@@ -17,7 +17,6 @@ body {
 	margin: 0;
 	font-family: "Muller", serif;
 	background-image: $gradient;
-	// background-color: gray;
 }
 
 * {
@@ -62,6 +61,13 @@ h2 {
 	}
 }
 
+@media(max-width: $sm) {
+	h2 {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
 a {
 	display: inline-block;
 	outline: none !important;
@@ -74,6 +80,8 @@ a {
 }
 
 .header {
+	position: relative;
+	z-index: 6;
 	display: block;
 	max-width: 1010px;
 	height: 160px;
@@ -81,7 +89,7 @@ a {
 	background-color: #fff;
 	opacity: 0;
 	transform: translateY(-100%);
-	transition: transform .5s ease-out, opacity .35s ease-out;
+	transition: transform .9s ease-out, opacity .35s ease-out;
 	&.translate {
 		transform: translateY(0);
 	}
@@ -125,7 +133,7 @@ a {
 
 @media(max-width: $lg) {
 	.header {
-		max-width: 674px;
+		max-width: 678px;
 		height: 120px;
 		padding: 30px 32px 50px 6.25vw;
 		&__logo {
@@ -144,13 +152,21 @@ a {
 	}
 }
 
+@media(max-width: $sm) {
+	.header {
+		width: 100%;
+		max-width: 100%;
+		padding-left: 32px;
+		&__logo {
+			margin-right: 237px;
+		}
+	}
+}
+
 .main {
 	display: flex;
 	align-items: center;
-	height: calc(100vh - 304px);
-	// padding-top: 190px;
-	// padding-top: 17.59vh;
-	// padding-top: calc(50% - 542px);
+	height: calc(100vh - 356px);
 	padding-left: 13.13vw;
 	&__block {
 		position: relative;
@@ -174,8 +190,21 @@ a {
 
 @media(max-width: $lg) {
 	.main {
-		height: calc(100vh - 224px);
+		height: calc(100vh - 276px);
 		padding-left: 6.25vw;
+	}
+}
+
+@media(max-width: $sm) {
+	.main {
+		padding-left: 32px;
+	}
+}
+
+@media(max-width: $sm) {
+	.main {
+		align-items: flex-start;
+		padding-top: 82px;
 	}
 }
 
@@ -220,20 +249,16 @@ a {
 		}
 	}
 	&__container-wrap {
-		display: flex;
-		align-items: center;
-		width: 360px;
-		margin-left: -20px;
-		padding-left: 20px;
-		height: 96px;
-		overflow: hidden;
-	}
-	&__container {
 		display: block;
+		width: 385px;
+		margin-left: -35px;
+		padding-left: 35px;
+		padding-top: 20px;
+	}
+	&__link {
+		position: relative;
 		width: 312px;
 		height: 56px;
-		perspective: 1000px;
-		transform-style: preserve-3d;
 		transform: translateY(64px);
 		opacity: 0;
 		transition: transform .5s ease-out, opacity .35s ease-out;
@@ -243,14 +268,16 @@ a {
 		&.visible {
 			opacity: 1;
 		}
-	}
-	&__link {
-		position: relative;
-		width: 312px;
-		height: 56px;
-		transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
-		transform-style: preserve-3d;
-		transition: all .2s ease;
+		&:hover {
+			.main-block__shadow {
+				box-shadow: 0 10px 22px 0 rgba(21, 163, 64, 0.52);
+			}
+		}
+		&:active {
+			.main-block__shadow {
+				box-shadow: 0 5px 16px 0 rgba(21, 163, 64, 0.52);
+			}
+		}
 	}
 	&__shadow {
 		position: absolute;
@@ -263,6 +290,7 @@ a {
 		height: 56px;
 		border-radius: 6px;
 		box-shadow: 0 12px 27px 0 rgba(21, 163, 64, 0.52);
+		transition: box-shadow .2s ease;
 	}
 	&__download {
 		position: relative;
@@ -277,7 +305,7 @@ a {
 		border-radius: 6px;
 		transition: all .2s ease;
 		&:hover, &:focus {
-			background-color: darken($ac, 1%);
+			background-color: darken($ac, 3%);
 		}
 		img, svg {
 			display: block;
@@ -288,7 +316,7 @@ a {
 			display: block;
 			font-size: 18px;
 			line-height: 1;
-			font-weight: 400;
+			font-weight: 600;
 			color: #fff;
 		}
 	}
@@ -303,8 +331,20 @@ a {
 				height: 60px;
 			}
 		}
+	}
+}
+
+@media(max-width: $sm) {
+	.main-block {
 		&__subtitle {
-			margin-bottom: 0;
+			margin-bottom: 12px;
+		}
+		&__wrap {
+			height: 48px;
+			max-width: 520px;
+			&_subtitle {
+				height: 60px;
+			}
 		}
 	}
 }
@@ -360,13 +400,9 @@ a {
 .aside {
 	position: absolute;
 	right: 0;
-	// top: -104px;
-	// top: -11.06%;
 	top: -11.06vh;
 	display: block;
-	// width: 608px;
 	width: 31.67vw;
-	// width: 456px;
 	height: 100%;
 	&__container {
 		position: relative;
@@ -377,24 +413,20 @@ a {
 		transform: rotate(45deg);
 		@include aspect-ratio(80, 133);
 	}
-	// &::before {
-	// 	content: '';
 	&__circle	{
 		position: absolute;
 		z-index: 1;
 		top: 19.1%;
 		left: -20%;
 		display: block;
-		// width: 973px;
-		// height: 973px;
 		width: 165%;
 		height: 99.25%;
 		border-radius: 50%;
 		box-sizing: border-box;
 		background-color: $ac;
 		opacity: 0;
-		transform: translateX(25%);
-		transition: transform 1.1s linear, opacity .5s linear;
+		transform: translateX(16%);
+		transition: transform .9s ease-out, opacity .35s ease-out;
 		&::before {
 			content: '';
 			position: absolute;
@@ -428,15 +460,9 @@ a {
 		position: absolute;
 		z-index: 2;
 		display: block;
-		// max-width: 398px;
 		width: 65.46%;
-		// max-height: 732px;
-		// height: 72.4%;
-		// height: 79.57%;
-		// width: 298px;
-		// height: 549px;
 		opacity: 0;
-		transition: transform 1.1s linear, opacity .5s linear;
+		transition: transform 1.1s cubic-bezier(0, 0, .25, 1), opacity .5s cubic-bezier(0, 0, .25, 1);
 		&.translate {
 			transform: translateY(0);
 		}
@@ -444,48 +470,38 @@ a {
 			opacity: 1;
 		}
 		&_krymland {
-			// top: -180px;
 			left: -4.4%;
 			top: -16.7%;
-			// top: -16.67vh;
 			transform: translateY(-100%);
 		}
 		&_sakropol {
-			left: -4.4%;
-			// top: 536px;
-			// top: 57.02%;
 			top: 54.02%;
+			left: -4.4%;
 			transform: translateY(-100%);
 		}
 		&_akkond {
-			left: 55.87%;
 			top: 14.26%;
-			// top: 134px;
-			// left: 364px;
+			left: 55.87%;
 			transform: translateY(100%);
 		}
 		&_smu {
-			// top: 90.21%;
-			left: 55.87%;
 			top: 85.02%;
-			// top: 848px;
-			// left: 364px;
+			left: 55.87%;
 			transform: translateY(100%);
 		}
 		&_monolit {
-			// top: 534px;
-			// top: 56.81%;
-			left: 116.07%;
 			top: 53.93%;
+			left: 116.07%;
 			transform: translateX(100%);
 		}
 	}
 	&__wrap {
 		position: relative;
 		width: 100%;
-		// max-width: 398px;
 		height: auto;
-		// max-height: 732px;
+		perspective: 500px;
+		transform-style: preserve-3d;
+		transition: transform .2s ease-out;
 		@include aspect-ratio(199, 366);
 		img:first-child {
 			position: absolute;
@@ -499,15 +515,11 @@ a {
 		img:last-child {
 			position: absolute;
 			z-index: 1;
-			// top: 16px;
 			top: 2.17%;
 			left: 8.29%;
 			display: block;
-			// width: 300px;
 			width: 75.38%;
-			// height: 649px;
-			height: 88.66%;
-			border-radius: 30px;
+			height: 88.65%;
 		}
 	}
 }
@@ -518,7 +530,6 @@ a {
 		width: 34.67vw;
 		&__phone {
 			width: 68%;
-			// height: 73.8%;
 			&_krymland {
 				top: -16.05%;
 				left: -5.9%;
@@ -542,6 +553,13 @@ a {
 		}
 	}
 }
+
+@media(max-width: $lg) and (orientation : landscape) {
+	.aside {
+		top: 0;
+	}
+}
+
 @media(max-width: $md) {
 	.aside {
 		top: -12.06%;
@@ -549,28 +567,74 @@ a {
 		width: 40.67vw;
 		&__phone {
 			width: 72%;
-			// height: 73.8%;
 			&_krymland {
 				top: -22.05%;
 				left: -3.9%;
 			}
 			&_sakropol {
+				top: 55.7%;
 				left: -3.9%;
-				top: 55.4%;
 			}
 			&_akkond {
-				left: 61.87%;
 				top: 11.66%;
+				left: 61.87%;
 			}
 			&_smu {
+				top: 90%;
 				left: 61.87%;
-				top: 89.25%;
 			}
 			&_monolit {
 				display: none;
 				top: 56.25%;
 				left: 118%;
 			}
+		}
+	}
+}
+
+@media(max-width: $md) and (orientation : portrait) {
+	.aside {
+		top: 10%;
+	}
+}
+
+@media(max-width: $sm) {
+	.aside {
+		top: auto;
+		right: auto;
+		bottom: 3.42%;
+		left: 50%;
+		width: 432px;
+		height: 432px;
+		&__circle {
+			width: 100%;
+			height: 100%;
+		}
+		&__phone {
+			width: 34.5%;
+			&_sakropol {
+				top: 44.2%;
+				left: -17.5%;
+			}
+			&_krymland {
+				display: none;
+			}
+			&_akkond {
+				top: 9%;
+				left: 14.5%;
+			}
+			&_smu {
+				top: 72%;
+				left: 14.5%;
+			}
+			&_monolit {
+				display: block;
+				top: 44.25%;
+				left: 46%;
+			}
+		}
+		&__container {
+			@include aspect-ratio(1);
 		}
 	}
 }

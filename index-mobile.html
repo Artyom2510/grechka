@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.jpg">
 
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main-moobile.css">
 	
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/jquery.smoothscroll.js"></script>
@@ -26,14 +26,14 @@
 </head>
 
 <body>
+
 	<header class="header">
-		<div class="header__link">
-			<a href="#" class="header__logo">
-				<img src="img/grechka-logo.svg" alt="">
-			</a>
-			<a href="#" class="header__phone">+7 (978) 884 67 66</a>
-			<a href="#" class="header__email">hello@grechka.digital</a>
-		</div>
+		<a href="#">
+			<img src="img/grechka-logo.svg" class="header__logo">
+		</a>
+		<a href="#">
+			<img src="img/phone.svg"  class="header__call">
+		</a>
 	</header>
 
 	<main class="main">
@@ -70,12 +70,6 @@
 		<div class="aside">
 			<div class="aside__container">
 				<div class="aside__circle"></div>
-				<div class="aside__phone aside__phone_krymland">
-					<div class="aside__wrap">
-						<img src="img/phone/smartphone.png" alt="">
-						<img src="img/phone/krymland.png" alt="">
-					</div>
-				</div>
 				<div class="aside__phone aside__phone_sakropol">
 					<div class="aside__wrap">
 						<img src="img/phone/smartphone.png" alt="">
@@ -103,14 +97,17 @@
 			</div>
 		</div>
 
-		<a href="https://www.behance.net/grechka-digital" target="_blank" class="main__behance-logo behance-logo">
+	</main>
+
+	<footer class="footer">
+		<a href="https://www.behance.net/grechka-digital" target="_blank" class="footer__behance-logo behance-logo">
 			<img src="img/target-blank.svg" alt="" class="img-svg">
 			<img src="img/behance-logo.svg" alt="" class="img-svg">
 		</a>
-
-	</main>
-
-	<footer>
+		<div class="footer__contcts">
+			<a href="#" class="footer__phone">+7 (978) 884 67 66</a>
+			<a href="#" class="footer__email">hello@grechka.digital</a>
+		</div>
 	</footer>
 </body>
 </html>
