@@ -127,7 +127,13 @@ a:hover, a:focus, a:active {
 
 .main {
 	display: block;
-	padding: 28px 16px 48px;
+	padding: 28px 16px 13%;
+}
+
+@media (max-width: 1023.98px) and (orientation: landscape) {
+	.main {
+		padding-bottom: 22.5%;
+	}
 }
 
 .main-block__title {
