@@ -6,17 +6,21 @@
 
 html,
 body {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 body {
 	position: relative;
 	min-width: 320px;
-	height: 100vh;
 	padding: 0;
 	margin: 0;
 	font-family: "Muller", serif;
 	background-image: $gradient;
+}
+
+.body {
+	overflow-y: hidden;
+	height: 100vh;
 }
 
 * {
@@ -27,7 +31,7 @@ section {
 	position: relative;
 }
 
-h1, h2{
+h1, h3 {
 	display: block;
 	margin: 0;
 	font-family: "Muller";
@@ -47,7 +51,7 @@ h1 {
 	}
 }
 
-h2 {
+h3 {
 	font-size: 20px;
 	line-height: 36px;
 	font-weight: 400;
@@ -55,14 +59,14 @@ h2 {
 }
 
 @media(max-width: $lg) {
-	h2 {
+	h3 {
 		font-size: 15px;
 		line-height: 30px;
 	}
 }
 
 @media(max-width: $sm) {
-	h2 {
+	h3 {
 		font-size: 18px;
 		line-height: 30px;
 	}
@@ -133,7 +137,7 @@ a {
 
 @media(max-width: $lg) {
 	.header {
-		max-width: 678px;
+		max-width: 680px;
 		height: 120px;
 		padding: 30px 32px 50px 6.25vw;
 		&__logo {
@@ -359,6 +363,7 @@ a {
 	background-color: #ffffff;
 	svg {
 		path {
+			fill: #47525B;
 			transition: fill .2s ease-in;
 		}
 		&:first-child {

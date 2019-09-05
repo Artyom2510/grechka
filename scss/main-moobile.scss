@@ -4,60 +4,27 @@
 @import "vars";
 @import "fonts";
 
-html,
-body {
-	overflow-x: hidden;
-}
-
-body {
-	position: relative;
-	min-width: 320px;
-	padding: 0;
-	margin: 0;
-	font-family: "Muller", serif;
-	background-image: $gradient;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-section {
-	position: relative;
-}
-
-h1, h2 {
+h2, h4 {
 	display: block;
 	margin: 0;
 	font-family: "Muller";
 }
 
-h1 {
+h2 {
 	font-size: 36px;
 	font-weight: 800;
 	line-height: 42px;
 	color: $titleText;
 }
 
-h2 {
+h4 {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 24px;
 	color: $descText;
 }
 
-a {
-	display: inline-block;
-	outline: none !important;
-	text-decoration: none;
-	transition: all .2s ease;
-	cursor: pointer;
-	&:hover, &:focus, &:active {
-		text-decoration: none;
-	}
-}
-
-.header {
+.header-mobile {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -86,18 +53,18 @@ a {
 	}
 }
 
-.main {
+.main-mobile {
 	display: block;
 	padding: 28px 16px 13%;
 }
 
 @media(max-width: $sm) and (orientation : landscape) {
-	.main {
+	.main-mobile {
 		padding-bottom: 22.5%;
 	}
 }
 
-.main-block {
+.main-mobile-block {
 	&__title {
 		display: block;
 		margin-bottom: 8px;
@@ -156,12 +123,12 @@ a {
 			opacity: 1;
 		}
 		&:hover {
-			.main-block__shadow {
+			.main-mobile-block__shadow {
 				box-shadow: 0 10px 22px 0 rgba(21, 163, 64, 0.52);
 			}
 		}
 		&:active {
-			.main-block__shadow {
+			.main-mobile-block__shadow {
 				box-shadow: 0 5px 16px 0 rgba(21, 163, 64, 0.52);
 			}
 		}
@@ -209,7 +176,7 @@ a {
 	}
 }
 
-.aside {
+.aside-mobile {
 	display: block;
 	width: 100%;
 	min-height: 288px;
@@ -331,7 +298,7 @@ a {
 	}
 }
 
-.footer {
+.footer-mobile {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -372,7 +339,7 @@ a {
 	}
 }
 
-.behance-logo {
+.behance-logo-mobile {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -380,30 +347,24 @@ a {
 	width: 72px;
 	height: 72px;
 	background-color: $titleText;
-	svg {
+	&__target,
+	&__logo {
 		display: block;
 		z-index: 2;
 		path {
 			fill: #fff;
 			transition: fill .2s ease-in;
 		}
-		&:first-child {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			width: 9px;
-			height: 9px;
-		}
-		&:last-child {
-			width: 32px;
-			height: 20px;
-		}
 	}
-	&:hover {
-		svg {
-			path {
-				fill: $behance;
-			}
-		}
+	&__target {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 9px;
+		height: 9px;
+	}
+	&__logo {
+		width: 32px;
+		height: 20px;
 	}
 }
