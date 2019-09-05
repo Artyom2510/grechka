@@ -135,12 +135,14 @@ $(function() {
 		'</div>' +
 	'</footer>'
 
-	$(window).on('load', function() {
+	function windowWidth() {
 		if ($(window).width() < 768) {
 			$('body').removeClass('body').empty();
 			$('body').html(fragmentBody);
 		}
-	});
+	}
+
+	windowWidth();
 
 	//Поворт обмылков
 	$('.aside__phone').on({
