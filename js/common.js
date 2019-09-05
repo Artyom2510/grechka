@@ -188,7 +188,7 @@ $(function() {
 					$("" + arrOfTranslate[j]).addClass('visible');
 				}, arrayOfTimeVisible[j]);
 			}
-		}, 100);
+		}, 300);
 	});
 
 });
