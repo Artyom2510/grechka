@@ -4,27 +4,60 @@
 @import "vars";
 @import "fonts";
 
-h2, h4 {
+html,
+body {
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+	padding: 0;
+	margin: 0;
+	font-family: "Muller", serif;
+	background-image: $gradient;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+section {
+	position: relative;
+}
+
+h1, h2 {
 	display: block;
 	margin: 0;
 	font-family: "Muller";
 }
 
-h2 {
+h1 {
 	font-size: 36px;
 	font-weight: 800;
 	line-height: 42px;
 	color: $titleText;
 }
 
-h4 {
+h2 {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 24px;
 	color: $descText;
 }
 
-.header-mobile {
+a {
+	display: inline-block;
+	outline: none !important;
+	text-decoration: none;
+	transition: all .2s ease;
+	cursor: pointer;
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+	}
+}
+
+.header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -53,18 +86,18 @@ h4 {
 	}
 }
 
-.main-mobile {
+.main {
 	display: block;
 	padding: 28px 16px 13%;
 }
 
 @media(max-width: $sm) and (orientation : landscape) {
-	.main-mobile {
+	.main {
 		padding-bottom: 22.5%;
 	}
 }
 
-.main-mobile-block {
+.main-block {
 	&__title {
 		display: block;
 		margin-bottom: 8px;
@@ -123,12 +156,12 @@ h4 {
 			opacity: 1;
 		}
 		&:hover {
-			.main-mobile-block__shadow {
+			.main-block__shadow {
 				box-shadow: 0 10px 22px 0 rgba(21, 163, 64, 0.52);
 			}
 		}
 		&:active {
-			.main-mobile-block__shadow {
+			.main-block__shadow {
 				box-shadow: 0 5px 16px 0 rgba(21, 163, 64, 0.52);
 			}
 		}
@@ -176,7 +209,7 @@ h4 {
 	}
 }
 
-.aside-mobile {
+.aside {
 	display: block;
 	width: 100%;
 	min-height: 288px;
@@ -298,7 +331,7 @@ h4 {
 	}
 }
 
-.footer-mobile {
+.footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -339,7 +372,7 @@ h4 {
 	}
 }
 
-.behance-logo-mobile {
+.behance-logo {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -347,24 +380,23 @@ h4 {
 	width: 72px;
 	height: 72px;
 	background-color: $titleText;
-	&__target,
-	&__logo {
+	svg {
 		display: block;
 		z-index: 2;
 		path {
 			fill: #fff;
 			transition: fill .2s ease-in;
 		}
-	}
-	&__target {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		width: 9px;
-		height: 9px;
-	}
-	&__logo {
-		width: 32px;
-		height: 20px;
+		&:first-child {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 9px;
+			height: 9px;
+		}
+		&:last-child {
+			width: 32px;
+			height: 20px;
+		}
 	}
 }
