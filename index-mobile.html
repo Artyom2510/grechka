@@ -18,7 +18,6 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/main-moobile.css">
 	
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -26,15 +25,15 @@
 	<script src="js/common.js"></script>
 </head>
 
-<body class="body">
-	<header class="header js-header">
-		<div class="header__link">
-			<a href="#" class="header__logo">
-				<img src="img/grechka-logo.svg" alt="">
-			</a>
-			<a href="tel:+7(978)8846766" class="header__phone">+7 (978) 884 67 66</a>
-			<a href="mailto:hello@grechka.digital" class="header__email" target="_blank">hello@grechka.digital</a>
-		</div>
+<body>
+
+	<header class="header">
+		<a href="#">
+			<img src="img/grechka-logo.svg" class="header__logo">
+		</a>
+		<a href="tel:+7(978)8846766">
+			<img src="img/phone.svg" class="header__call">
+		</a>
 	</header>
 
 	<main class="main">
@@ -42,23 +41,23 @@
 		<section class="main__block main-block">
 			<div class="main-block__title">
 				<div class="main-block__wrap">
-					<h1 class="main-block__title-part main-block__title-part_first js-part-first">Разрабатываем</h1>
+					<h1 class="main-block__title-part main-block__title-part_first">Разрабатываем</h1>
 				</div>
 				<div class="main-block__wrap">
-					<h1 class="main-block__title-part main-block__title-part_second js-part-second">digital-решения</h1>
+					<h1 class="main-block__title-part main-block__title-part_second">digital-решения</h1>
 				</div>
 				<div class="main-block__wrap">
-					<h1 class="main-block__title-part main-block__title-part_third js-part-third">для бизнеса</h1>
+					<h1 class="main-block__title-part main-block__title-part_third">для бизнеса</h1>
 				</div>
 			</div>
 			<div class="main-block__subtitle">
 				<div class="main-block__wrap main-block__wrap_subtitle">
-					<h3 class="main-block__subtitle-part js-subtitle">Cоздаем сайты, программируем сложный функционал, продумываем дизайн, проектируем интерфейсы.
-					</h3>
+					<h2 class="main-block__subtitle-part">Cоздаем сайты, программируем сложный функционал, продумываем дизайн, проектируем интерфейсы.
+					</h2>
 				</div>
 			</div>
 			<div class="main-block__container-wrap">
-				<a href="https://drive.google.com/file/d/1FaNth5hlsdvzcHuLKj9c6amVe6n0EM9l/view" class="main-block__link js-presentation" target="_blank">
+				<a href="#" class="main-block__link">
 					<span class="main-block__shadow"></span>
 					<div class="main-block__download">
 						<img src="img/download.svg" alt="">
@@ -70,32 +69,26 @@
 
 		<div class="aside">
 			<div class="aside__container">
-				<div class="aside__circle js-circle"></div>
-				<div class="aside__phone aside__phone_krymland js-phone">
-					<div class="aside__wrap">
-						<img src="img/phone/smartphone.png" alt="">
-						<img src="img/phone/krymland.png" alt="">
-					</div>
-				</div>
-				<div class="aside__phone aside__phone_sakropol js-phone">
+				<div class="aside__circle"></div>
+				<div class="aside__phone aside__phone_sakropol">
 					<div class="aside__wrap">
 						<img src="img/phone/smartphone.png" alt="">
 						<img src="img/phone/sakropol.png" alt="">
 					</div>
 				</div>
-				<div class="aside__phone aside__phone_akkond js-phone">
+				<div class="aside__phone aside__phone_akkond">
 					<div class="aside__wrap">
 						<img src="img/phone/smartphone.png" alt="">
 						<img src="img/phone/akkond.png" alt="">
 					</div>
 				</div>
-				<div class="aside__phone aside__phone_smu js-phone">
+				<div class="aside__phone aside__phone_smu">
 					<div class="aside__wrap">
 						<img src="img/phone/smartphone.png" alt="">
 						<img src="img/phone/smu.png" alt="">
 					</div>
 				</div>
-				<div class="aside__phone aside__phone_monolit js-phone">
+				<div class="aside__phone aside__phone_monolit">
 					<div class="aside__wrap">
 						<img src="img/phone/smartphone.png" alt="">
 						<img src="img/phone/monolit.png" alt="">
@@ -104,12 +97,17 @@
 			</div>
 		</div>
 
-		<a href="https://www.behance.net/grechka-digital" target="_blank" class="main__behance-logo behance-logo js-behance-logo">
+	</main>
+
+	<footer class="footer">
+		<a href="https://www.behance.net/grechka-digital" target="_blank" class="footer__behance-logo behance-logo">
 			<img src="img/target-blank.svg" alt="" class="img-svg">
 			<img src="img/behance-logo.svg" alt="" class="img-svg">
 		</a>
-
-	</main>
-
+		<div class="footer__contcts">
+			<a href="tel:+7(978)8846766" class="footer__phone">+7 (978) 884 67 66</a>
+			<a href="mailto:hello@grechka.digital" class="footer__email">hello@grechka.digital</a>
+		</div>
+	</footer>
 </body>
 </html>
